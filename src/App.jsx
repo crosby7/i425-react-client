@@ -1,13 +1,11 @@
-import { useState } from 'react'
-import './App.css'
+import AppRoutes from "./config/routes.jsx";
 
 function App() {
   return (
     <>
-      <h1>Course Project Client App</h1>
-        <h2>Using Freshmart API</h2>
+      <AppRoutes />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
