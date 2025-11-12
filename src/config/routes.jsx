@@ -10,9 +10,9 @@ import RequireAuth from "../components/RequireAuth.jsx";
 import Layout from "../components/Layout";
 import Home from "../pages/home";
 import NoMatch from "../pages/nomatch";
-// import Signin from "../pages/auth/signin.jsx";
-// import Signup from "../pages/auth/signup.jsx";
-// import Signout from "../pages/auth/signout.jsx";
+import Signin from "../pages/auth/signin.jsx";
+import Signup from "../pages/auth/signup.jsx";
+import Signout from "../pages/auth/signout.jsx";
 
 const AppRoutes = () => {
   return (
