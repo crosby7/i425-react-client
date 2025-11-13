@@ -16,7 +16,7 @@ const Header = () => {
     isActive ? "nav-link active" : "nav-link";
   return (
     <>
-      <Navbar bg="primary" variant="dark" expand="sm">
+      <Navbar variant="dark" expand="sm" className="navbar-custom">
         <Container>
           <NavLink to="/">
             <Navbar.Brand>FreshMart</Navbar.Brand>
