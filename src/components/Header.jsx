@@ -7,7 +7,7 @@
 
 import { NavLink } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
-// import { useAuth } from "../services/useAuth.jsx";
+import { useAuth } from "../services/useAuth.jsx";
 
 //This component creates a React-Bootstrap navbar. https://react-bootstrap.github.io/components/navbar/
 const Header = () => {

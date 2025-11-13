@@ -7,12 +7,15 @@ Desc: defines the routes for the app
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "../services/useAuth.jsx";
 import RequireAuth from "../components/RequireAuth.jsx";
-import Layout from "../components/Layout";
+import Layout from "../components/Layout.jsx";
 import Home from "../pages/home";
 import NoMatch from "../pages/nomatch";
 import Signin from "../pages/auth/signin.jsx";
 import Signup from "../pages/auth/signup.jsx";
 import Signout from "../pages/auth/signout.jsx";
+import Groceries from "../pages/groceries/groceries.jsx";
+import Grocery from "../pages/groceries/grocery.jsx";
+import Categories from "../pages/categories/categories.jsx";
 
 const AppRoutes = () => {
   return (
@@ -22,19 +25,19 @@ const AppRoutes = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />}></Route>
             <Route
-              path="professors"
+              path="groceries"
               element={
                 <RequireAuth>
-                  <Professors />
+                  <Groceries />
                 </RequireAuth>
               }
             >
               <Route
                 index
-                element={<p>Select a professor to view details.</p>}
+                element={<p>Select a grocery to view details.</p>}
               ></Route>
-              <Route path=":professorId" element={<Professor />}>
-                <Route path="classes" element={<Classes />}></Route>
+              <Route path=":groceryId" element={<Grocery />}>
+                <Route path="categories" element={<Categories />}></Route>
               </Route>
             </Route>
             <Route path="/signin" element={<Signin />} />
