@@ -13,8 +13,8 @@ import NoMatch from "../pages/nomatch";
 import Signin from "../pages/auth/signin.jsx";
 import Signup from "../pages/auth/signup.jsx";
 import Signout from "../pages/auth/signout.jsx";
-import Groceries from "../pages/groceries/groceries.jsx";
-import Grocery from "../pages/groceries/grocery.jsx";
+import Groceries from "../pages/groceries/categories.jsx";
+import Grocery from "../pages/groceries/category.jsx";
 import Categories from "../pages/categories/categories.jsx";
 
 const AppRoutes = () => {
