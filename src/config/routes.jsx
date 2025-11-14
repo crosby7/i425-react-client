@@ -13,9 +13,9 @@ import NoMatch from "../pages/nomatch";
 import Signin from "../pages/auth/signin.jsx";
 import Signup from "../pages/auth/signup.jsx";
 import Signout from "../pages/auth/signout.jsx";
-import Groceries from "../pages/groceries/categories.jsx";
-import Grocery from "../pages/groceries/category.jsx";
-import Categories from "../pages/categories/categories.jsx";
+import Groceries from "../pages/grocery/groceries.jsx";
+import Categories from "../pages/category/categories.jsx";
+import Category from "../pages/category/category.jsx";
 
 const AppRoutes = () => {
   return (
@@ -24,20 +24,17 @@ const AppRoutes = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />}></Route>
-            <Route
-              path="groceries"
-              element={
+            <Route path="categories" element={
                 <RequireAuth>
-                  <Groceries />
+                  <Categories />
                 </RequireAuth>
-              }
-            >
+              }>
               <Route
                 index
-                element={<p>Select a grocery to view details.</p>}
+                element={<p>Select a category to view details.</p>}
               ></Route>
-              <Route path=":groceryId" element={<Grocery />}>
-                <Route path="categories" element={<Categories />}></Route>
+              <Route path=":categoryId" element={<Category />}>
+                <Route path="groceries" element={<Groceries />}></Route>
               </Route>
             </Route>
             <Route path="/signin" element={<Signin />} />

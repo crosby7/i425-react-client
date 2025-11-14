@@ -38,76 +38,48 @@ const Signup = () => {
   return (
     <>
       <div className="main-heading">
-        <div className="container">Sign Up</div>
+        <div className="container">Authorization</div>
+      </div>
+      <div className="sub-heading">
+          <div className="container">Sign up</div>
       </div>
       <div className="main-content container">
         <div className="auth-container">
-          {error && (
-            <div className="message" style={{ color: "red" }}>
-              {error}
-            </div>
-          )}
-          {isLoading && (
-            <div className="message image-loading">
+          {error && <div className="message" style={{ color: "red" }}>{error}</div>}
+          {isLoading && <div className="message image-loading">
               Please wait while data is being loaded
               <img src="/src/assets/img/loading.gif" alt="Loading ......" />
-            </div>
-          )}
-          {isAuthed ? (
-            <div style={{ width: "100%", textAlign: "left" }}>
-              Your account has been successfully created.
-            </div>
-          ) : (
-            <form className="form-auth" onSubmit={createAccount}>
-              <h3>Create an account with FreshMart Rewards</h3>
-              <div className="form-group">
-                <div>
-                  <label>Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div>
-                  <label>Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div>
-                  <label>Username</label>
-                  <input
-                    type="text"
-                    name="username"
-                    required
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div>
-                  <label>Password</label>
-                  <input
-                    type="password"
-                    name="password"
-                    required
-                    onChange={handleInputChange}
-                  />
-                </div>
+            </div>}
+          {isAuthed
+              ? <div style={{ width: "100%", textAlign: "left" }}>Your account has been successfully created.</div>
+              : <form className="form-auth" onSubmit={createAccount}>
+                  <h3>Create an account with FreshMart Rewards</h3>
+                  <div className="form-group">
+                    <div>
+                        <label>Name</label>
+                        <input type="text" name="name" required onChange={handleInputChange}/>
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <input type="email" name="email" required onChange={handleInputChange}/>
+                    </div>
+                    <div>
+                        <label>Username</label>
+                        <input type="text" name="username" required onChange={handleInputChange}/>
+                    </div>
+                    <div>
+                        <label>Password</label>
+                        <input type="password" name="password" required onChange={handleInputChange}/>
+                    </div>
                 <div className="form-button">
                   <Button type="submit">Sign up</Button>
                 </div>
                 <div className="form-footer">
-                  <p>
-                    Already have an account? <Link to="/signin">Sign in</Link>
-                  </p>
+                  <p>Already have an account? <Link to="/signin">Sign in</Link></p>
                 </div>
               </div>
             </form>
-          )}
+          }
         </div>
       </div>
     </>

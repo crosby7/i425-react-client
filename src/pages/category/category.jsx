@@ -5,12 +5,12 @@ File: category.jsx
 Description: Display category information
  */
 
-import {settings} from "../../config/config";
-import useXmlHttp from '../../services/useXmlHttp';
+import {settings} from "../../config/config.jsx";
+import useXmlHttp from '../../services/useXmlHttp.jsx';
 import {useParams, Link, useOutletContext} from "react-router-dom";
-import "../../assets/css/professor.css";
+import "../../assets/css/category.css";
 import {Outlet} from "react-router-dom";
-import {useAuth} from "../../services/useAuth";
+import {useAuth} from "../../services/useAuth.jsx";
 const Category = () => {
     const {user} = useAuth();
     const [subHeading, setSubHeading] = useOutletContext();
@@ -37,11 +37,11 @@ const Category = () => {
                     <div className="category-info">
                         <div><strong>Description</strong>: {category.description}</div>
                         <div><strong>Aisle Number</strong>: {category.aisleNumber}</div>
-                        <div><strong>Groceries</strong>: <Link to={`/categories/${category.id}/groceries`}>Click here to
+                        <div><strong>Groceries</strong>: <Link to={`/categories/${categoryId}/groceries`}>Click here to
                             view Groceries in this category</Link></div>
                     </div>
                     <div className="category-photo">
-                        <img src={category.categoryImg} alt={category.name} id={category.id}/>
+                        <img src={category.categoryImg} alt={category.name} id={category.categoryId}/>
                     </div>
                 </div>
                 <div className="category-groceries">

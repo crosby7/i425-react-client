@@ -1,17 +1,17 @@
 /**
  * Author: Zach Loucks
  * Date: 11/13/2025
- * File: categories.jsx
+ * File: category.jsx
  * Description: category page
  */
-import {settings} from "../../config/config";
+import {settings} from "../../config/config.jsx";
 import {useState, useEffect} from 'react';
 import {NavLink, Outlet, useLocation} from "react-router-dom";
 import "../../assets/css/category.css";
-import useXmlHttp from "../../services/useXmlHttp";
-import {useAuth} from "../../services/useAuth";
+import useXmlHttp from "../../services/useXmlHttp.jsx";
+import {useAuth} from "../../services/useAuth.jsx";
 
-const Professors = () => {
+const Categories = () => {
     const {user} = useAuth();
     const {pathname} = useLocation();
     const [subHeading, setSubHeading] = useState("All Categories");
@@ -42,9 +42,9 @@ const Professors = () => {
                 {categories && <div className="category-container">
                     <div className="category-list">
                         {categories.map((category) => (
-                            <NavLink key={category.id}
+                            <NavLink key={category.categoryId}
                                      className={({isActive}) => isActive ? "active" : ""}
-                                     to={`/professors/${category.id}`}>
+                                     to={`/categories/${category.categoryId}`}>
                                 <span>&nbsp;</span><div>{category.name}</div>
                             </NavLink>
                         ))}

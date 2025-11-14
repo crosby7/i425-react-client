@@ -50,11 +50,10 @@ const Signin = () => {
               <img src="/src/assets/img/loading.gif" alt="Loading ......" />
             </div>
           )}
-          {isAuthed ? (
-            <div style={{ width: "100%", textAlign: "left" }}>
-              You are now signed in! Welcome back!
-            </div>
-          ) : (
+          {isAuthed
+              ?
+              <div style={{ width: "100%", textAlign: "left" }}>You are now signed in! Welcome back!</div>
+              :
             <form className="form-auth" onSubmit={verifyAccount}>
               <h3>Sign in to FreshMart Rewards</h3>
               <div className="form-group">
@@ -86,7 +85,7 @@ const Signin = () => {
                 </div>
               </div>
             </form>
-          )}
+          }
         </div>
       </div>
     </>
