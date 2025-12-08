@@ -41,7 +41,7 @@ const Category = () => {
                             view Groceries in this category</Link></div>
                     </div>
                     <div className="category-photo">
-                        <img src={category.categoryImg} alt={category.name} id={category.categoryId}/>
+                        <img src={category.image} alt={category.name} id={category.categoryId}/>
                     </div>
                 </div>
                 <div className="category-groceries">
