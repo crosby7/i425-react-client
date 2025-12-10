@@ -16,6 +16,7 @@ import Signout from "../pages/auth/signout.jsx";
 import Groceries from "../pages/grocery/groceries.jsx";
 import Categories from "../pages/category/categories.jsx";
 import Category from "../pages/category/category.jsx";
+import Suppliers from "../pages/supplier/suppliers";
 
 const AppRoutes = () => {
   return (
@@ -37,6 +38,11 @@ const AppRoutes = () => {
                 <Route path="groceries" element={<Groceries />}></Route>
               </Route>
             </Route>
+            <Route path="suppliers" element={
+                <RequireAuth>
+                    <Suppliers />
+                </RequireAuth>
+            }></Route>
             <Route path="/signin" element={<Signin />} />
             <Route path="/signout" element={<Signout />} />
             <Route path="/signup" element={<Signup />} />
