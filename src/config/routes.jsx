@@ -25,24 +25,32 @@ const AppRoutes = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />}></Route>
-            <Route path="categories" element={
+            <Route
+              path="categories"
+              element={
                 <RequireAuth>
                   <Categories />
                 </RequireAuth>
-              }>
+              }
+            >
               <Route
                 index
                 element={<p>Select a category to view details.</p>}
               ></Route>
-              <Route path=":categoryId" element={<Category />}>
-                <Route path="groceries" element={<Groceries />}></Route>
-              </Route>
+              <Route path=":categoryId" element={<Category />}></Route>
+              <Route
+                path=":categoryId/groceries"
+                element={<Groceries />}
+              ></Route>
             </Route>
-            <Route path="suppliers" element={
+            <Route
+              path="suppliers"
+              element={
                 <RequireAuth>
-                    <Suppliers />
+                  <Suppliers />
                 </RequireAuth>
-            }></Route>
+              }
+            ></Route>
             <Route path="/signin" element={<Signin />} />
             <Route path="/signout" element={<Signout />} />
             <Route path="/signup" element={<Signup />} />

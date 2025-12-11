@@ -8,13 +8,19 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    border-bottom: 1px solid var(--gold-color);
+    border-bottom: 1px solid var(--evergreen-color);
 }
 
 .grocery-row-header{
     font-weight: bold;
     font-size: 14px;
-    background-color: #e4f1fe;
+    background-color: var(--light-green-color);
+    color: white;
+    border: 2px solid var(--evergreen-color);
+}
+
+.grocery-row-header div {
+    height: 100%;
 }
 
 .grocery-row div {
