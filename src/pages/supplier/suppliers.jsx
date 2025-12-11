@@ -2,20 +2,21 @@
 Name: Zach Loucks
 Date: 12/9/25
 File: suppliers.jsx
-Description: Display suppliers
+Description: Display all suppliers
  */
 
 import {settings} from "../../config/config";
 import {useAuth} from "../../services/useAuth";
 import useAxios from "../../services/useAxios";
-import {NavLink} from "react-router-dom";
+import {NavLink, Outlet} from "react-router-dom";
 import {useState, useEffect} from "react";
 import "/src/assets/css/supplier.css";
+import Pagination from "./pagination.jsx";
 
 
 
 const Suppliers = () => {
-    const url = settings.baseApiUrl + "/suppliers";
+    const [url, setUrl] = useState(settings.baseApiUrl + "/suppliers");
     const {user} = useAuth();
 
     //declare the data fetching function
@@ -52,7 +53,13 @@ const Suppliers = () => {
                         </div>
                         {suppliers.data && suppliers.data.map((supplier) => (
                             <div key={supplier.supplierId} className="supplier-row">
-                                <div>{supplier.supplierId}</div>
+                                <div>
+                                    <NavLink
+                                        className={({isActive}) => isActive ? "active" : ""}
+                                        to={`/suppliers/${supplier.supplierId}`}>
+                                        {supplier.supplierId}
+                                    </NavLink>
+                                </div>
                                 <div>{supplier.name}</div>
                                 <div>{supplier.phone}</div>
                                 <div>{supplier.email}</div>
@@ -61,7 +68,9 @@ const Suppliers = () => {
                             </div>
                         ))}
                     </div>}
+                {suppliers && <Pagination suppliers={suppliers} setUrl={setUrl}/>}
             </div>
+            <Outlet />
         </>
     );
 };
