@@ -34,6 +34,10 @@ const Header = () => {
               <div className="nav-separator">|</div>
                 <NavLink to="/suppliers" className={className}>
                     Suppliers</NavLink>
+              <div className="nav-separator">|</div>
+                <NavLink to="/producers" className={className}>
+                    Producers
+                </NavLink>
               {isAuthed ? (
                 <NavLink to="/signout" className={className}>
                   Sign Out
