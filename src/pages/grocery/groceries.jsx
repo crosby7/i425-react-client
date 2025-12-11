@@ -34,15 +34,15 @@ const Groceries = () => {
                     : <div className="grocery-row grocery-row-header">
                         <div>Name</div>
                         <div>Price</div>
-                        <div>Organic</div>
+                        <div>Organic?</div>
                     </div>
             )}
             {groceries && (
                 groceries.map((grocery, index) => (
                     <div key={index} className="grocery-row">
                         <div>{grocery.name}</div>
-                        <div>{grocery.price}</div>
-                        <div>{grocery.isOrganic}</div>
+                        <div>${grocery.price}</div>
+                        <div>{grocery.isOrganic ? "Yes" : "No"}</div>
                     </div>
                 ))
             )}

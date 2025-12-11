@@ -38,9 +38,6 @@ const Signup = () => {
   return (
     <>
       <div className="main-heading">
-        <div className="container">Authorization</div>
-      </div>
-      <div className="sub-heading">
           <div className="container">Sign up</div>
       </div>
       <div className="main-content container">
