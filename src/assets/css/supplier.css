@@ -8,12 +8,18 @@
 }
 
 .supplier-container > div:nth-child(odd) {
-    background-color: #f8f9fa;
+    background-color: var(--light-green-color);
+    color: white;
+}
+
+.supplier-container > div:nth-child(even) {
+    background-color: #888888;
+    color: white;
 }
 .supplier-row {
     width: 100%;
     min-height: 35px;
-    padding: 5px;
+    padding: 20px 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -24,25 +30,12 @@
     font-weight: bold;
     font-size: 14px;
     color: #22252c;
-    background-color: #cccccc !important;
     border-top: 2px solid #e4f1fe;
     border-bottom: 1px solid #e4f1fe;
 }
 
-.supplier-row div:nth-child(1) {
-    width: 15%
-}
-
-.supplier-row div:nth-child(2) {
-    width: 45%
-}
-
-.supplier-row div:nth-child(3) {
-    width: 15%
-}
-
-.supplier-row div:nth-child(4) {
-    width: 25%
+.supplier-row div {
+    flex: 1 1 0;
 }
 
 

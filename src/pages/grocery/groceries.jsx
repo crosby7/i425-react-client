@@ -31,7 +31,7 @@ const Groceries = () => {
                 </div>}
             {groceries && (groceries.length === 0
                     ? <p>Groceries were not found.</p>
-                    : <div className="grocery-row grocery-row-header">
+                    : <div className="grocery-row grocery-row-header row-header">
                         <div>Name</div>
                         <div>Price</div>
                         <div>Organic?</div>

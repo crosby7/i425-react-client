@@ -85,7 +85,7 @@ const Suppliers = () => {
                 Clear
               </button>
             </form>
-            <div className="supplier-row supplier-row-header">
+            <div className="supplier-row supplier-row-header row-header">
               <div>Supplier ID</div>
               <div>Name</div>
               <div>Phone</div>

@@ -7,23 +7,28 @@
 }
 
 .producer-container > div:nth-child(odd) {
-    background-color: #f8f9fa;
+    background-color: var(--light-green-color);
+    color: white;
+}
+
+.producer-container > div:nth-child(even) {
+    background-color: #888888;
+    color: white;
 }
 .producer-row {
     width: 100%;
-    min-height: 35px;
-    padding-left: 5px;
+    min-height: 40px;
     display: flex;
     flex-direction: row;
     align-items: center;
     border-bottom: 1px solid #e4f1fe;
+    padding: 20px 10px;
 }
 
 .producer-row-header {
     font-weight: bold;
     font-size: 14px;
     color: #22252c;
-    background-color: #cccccc !important;
     border-top: 1px solid #e4f1fe;
 }
 
@@ -34,7 +39,7 @@
 }
 
 .producer-info div {
-    margin-right: 2px;
+    flex: 1 1 0;
 }
 
 .producer-id {
