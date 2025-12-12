@@ -50,7 +50,7 @@ const AppRoutes = () => {
                     <Producers />
                 </RequireAuth>
             }>
-                <Route path="producerId" element={<EditProducer />} />
+                <Route path=":producerId" element={<EditProducer />} />
             </Route>
             <Route path="/signin" element={<Signin />} />
             <Route path="/signout" element={<Signout />} />

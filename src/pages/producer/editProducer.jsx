@@ -8,6 +8,7 @@ import "/src/assets/css/producer.css";
 
 const EditProducer =
     ({showModal, setShowModal, data, reload, setReload, setSubHeading}) => {
+        console.log("in edit: ", data);
         const {error, isLoading, data: response, update} = UseFetch();
         const navigate = useNavigate();
         const [submitted, setSubmitted] = useState(false);
@@ -18,7 +19,7 @@ const EditProducer =
             shouldUseNativeValidation: false
         });
         const editFormOptions = {
-            id: {required: "ID is required"},
+            producerId: {required: "ID is required"},
             name: {required: "Name is required"},
             phone: {required: "Phone is required"},
             email: {required: "Email is required"},
@@ -74,7 +75,7 @@ const EditProducer =
                                 </ul>
                                 <div className="form-group">
                                     <label>Producer ID</label>
-                                    <input name="id" readOnly="readOnly" {...register('id', editFormOptions.producerId)}/>
+                                    <input name="id" readOnly="readOnly" {...register('producerId', editFormOptions.producerId)}/>
                                 </div>
                                 <div className="form-group">
                                     <label>Name</label>

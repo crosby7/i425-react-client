@@ -50,6 +50,7 @@ const Producers = () => {
     }, [reload]);
 
     const handleEdit = (e) => {
+        console.log('handling edit');
         if(disabled) return;
 
         //retrieve producer data and pass it to the update page
@@ -57,9 +58,9 @@ const Producers = () => {
         ["producerId", "name", "phone", "email", "address"].forEach(function(key) {
             producer[key] =
                 document.getElementById(`producer-${key}-` + e.target.id).innerText;
-        })
+        });
         setActiveProducer(producer);
-        navigate("/producer/" + e.target.id);
+        navigate("/producers/" + e.target.id);
         setShowEditModal(true);
         setSubHeading("Edit Producer");
     }
@@ -76,13 +77,15 @@ const Producers = () => {
     const [showDeleteModal, setShowDeleteModal] = useState(false);
 
     const handleDelete = (e) => {
+        console.log('handling delete');
         if(disabled) return;
         let producer = {};
         ["producerId", "name", "phone", "email", "address"].forEach(function (key)
         {
+            console.log('inside delete foreach');
             producer[key] =
                 document.getElementById(`producer-${key}-` + e.target.id).innerText;
-        })
+        });
         setActiveProducer(producer);
         setSubHeading("Delete Producer")
         navigate("/producers/" + e.target.id);
@@ -126,7 +129,7 @@ const Producers = () => {
                         {producers.map((producer) => (
                             <div key={producer.producerId} className="producer-row">
                                 <div className="producer-info">
-                                    <div id={"producer-id-" + producer.producerId} className="producer-id">{producer.producerId}</div>
+                                    <div id={"producer-producerId-" + producer.producerId} className="producer-id">{producer.producerId}</div>
                                     <div id={"producer-name-" + producer.producerId} className="producer-name">{producer.name}</div>
                                     <div id={"producer-phone-" + producer.producerId} className="producer-phone">{producer.phone}</div>
                                     <div id={"producer-email-" + producer.producerId} className="producer-email">{producer.email}</div>
