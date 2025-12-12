@@ -7,7 +7,7 @@ Description: Display category information
 
 import { settings } from "../../config/config.jsx";
 import useXmlHttp from "../../services/useXmlHttp.jsx";
-import { useParams, Link, useOutletContext } from "react-router-dom";
+import {useParams, Link, useOutletContext, Outlet} from "react-router-dom";
 import "../../assets/css/category.css";
 import { useAuth } from "../../services/useAuth.jsx";
 import { useEffect } from "react";
@@ -61,6 +61,9 @@ const Category = () => {
               id={category.categoryId}
             />
           </div>
+        <div className="category-groceries">
+            <Outlet/>
+        </div>
         </div>
       )}
     </>

@@ -9,7 +9,7 @@ const DeleteProducer = ({showModal, setShowModal, data, reload, setReload, setSu
     const [showButton, setShowButton] = useState(true);
     const navigate = useNavigate();
     const handleDelete = () => {
-        remove(data.producerId);
+        remove(data.id);
         setShowButton(false);
     }
     const handleCancel = () => {

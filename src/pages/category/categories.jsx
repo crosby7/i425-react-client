@@ -62,9 +62,8 @@ const Categories = () => {
               ))}
             </div>
             <div
-              className={`category-item ${!hasActiveCategory ? "hide" : ""}`}
-            >
-              <Outlet context={[subHeading, setSubHeading]} />
+              className="category-item">
+              <Outlet context={[subHeading, setSubHeading]}/>
             </div>
           </div>
         )}
