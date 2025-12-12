@@ -77,8 +77,9 @@ const UseFetch = () => {
 
     // Update an existing producer. id must be included in the body.
     const update = (body) => {
+        console.log('updating in useFetch: ', body);
         setIsLoading(true);
-        const promise = fetch(baseURI + "/" + body.id, {
+        const promise = fetch(baseURI + "/" + body.producerId, {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',

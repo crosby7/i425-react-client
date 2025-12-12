@@ -82,7 +82,6 @@ const Producers = () => {
         let producer = {};
         ["producerId", "name", "phone", "email", "address"].forEach(function (key)
         {
-            console.log('inside delete foreach');
             producer[key] =
                 document.getElementById(`producer-${key}-` + e.target.id).innerText;
         });
