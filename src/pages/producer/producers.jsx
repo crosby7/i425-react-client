@@ -10,7 +10,8 @@ import DeleteProducer from "./deleteProducer";
 
 
 const Producers = () => {
-    const {error, isLoading, data: producers, getAll, search} = UseFetch();
+    const {error, isLoading, data: producers, getAll} = UseFetch();
+
     const [subHeading, setSubHeading] = useState("All Producers");
 
     useEffect(() => {
