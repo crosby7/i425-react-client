@@ -1,13 +1,22 @@
+/*
+Name: Nicholas Pruett
+Date: 12/11/2025
+File: pagination.jsx
+Description: This script implements pagination and sorting of suppliers.
+ */
+
 import {settings} from "../../config/config";
 import {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
+
+import React from 'react';
 
 const Pagination = ({suppliers, setUrl}) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
     const [limit, setLimit] = useState(10);
     const [offset, setOffset] = useState(0);
-    const [sort, setSort] = useState("number:asc");
+    const [sort, setSort] = useState("supplierId:desc");
     const [pages, setPages] = useState({});  //first, last, previous, and next pages
 
     useEffect(() => {
@@ -23,11 +32,11 @@ const Pagination = ({suppliers, setUrl}) => {
                 pages[link.rel] = link.href;
             });
 
-            if(!suppliers.hasOwnProperty('prev')) {
+            if(!pages.hasOwnProperty('prev')) {
                 pages.prev = pages.self;
             }
 
-            if(!suppliers.hasOwnProperty('next')) {
+            if(!pages.hasOwnProperty('next')) {
                 pages.next = pages.self;
             }
             setPages(pages);
@@ -68,10 +77,10 @@ const Pagination = ({suppliers, setUrl}) => {
                 </div>
                 <div className="supplier-sorting"> Sort by:&nbsp;
                     <select onChange={sortSuppliers}>
-                        <option value="number:asc">Number A-Z</option>
-                        <option value="number:desc">Number Z-A</option>
-                        <option value="title:asc">Title A-Z</option>
-                        <option value="title:desc">Title Z-A</option>
+                        <option value="name:asc">Name A-Z</option>
+                        <option value="name:desc">Name Z-A</option>
+                        <option value="deliveryschedule:asc">Day A-Z</option>
+                        <option value="deliveryschedule:desc">Day Z-A</option>
                     </select>
                 </div>
             </div>}

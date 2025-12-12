@@ -1,3 +1,11 @@
+/*
+Name: Nicholas Pruett
+Date: 12/11/2025
+File: supplier.jsx
+Description: Creates the supplier component.
+ */
+
+
 import {settings} from "../../config/config.jsx";
 import {useAuth} from "../../services/useAuth";
 import useAxios from "../../services/useAxios";
