@@ -77,7 +77,6 @@ const Producers = () => {
     const [showDeleteModal, setShowDeleteModal] = useState(false);
 
     const handleDelete = (e) => {
-        console.log('handling delete');
         if(disabled) return;
         let producer = {};
         ["producerId", "name", "phone", "email", "address"].forEach(function (key)
