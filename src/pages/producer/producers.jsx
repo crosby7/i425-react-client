@@ -115,7 +115,7 @@ const Producers = () => {
                             <button className="button-light" style={{marginLeft: "5px"}}
                                     onClick={clearSearchBox}>Clear</button>
                         </form>
-                        <div className="producer-row producer-row-header">
+                        <div className="producer-row producer-row-header row-header">
                             <div className="producer-info">
                                 <div className="producer-id">Producer ID</div>
                                 <div className="producer-name">Name</div>
