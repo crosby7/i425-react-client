@@ -22,15 +22,17 @@ const Pagination = ({suppliers, setUrl}) => {
     useEffect(() => {
         if(suppliers) {
             let pages = {};
-            setLimit(suppliers.limit);
-            setOffset(suppliers.offset);
-            setTotalPages(Math.ceil(suppliers.totalCount/limit));
-            setCurrentPage(suppliers.offset/suppliers.limit + 1);
+            setLimit(suppliers.limit ? suppliers.limit : 0);
+            setOffset(suppliers.offset ? suppliers.offset : 0);
+            setTotalPages(suppliers.totalCount ? Math.ceil(suppliers.totalCount/limit) : 0);
+            setCurrentPage(suppliers.offset && suppliers.limit ? suppliers.offset/suppliers.limit + 1 : 0);
 
             //Extract offset from each link and store it in pages
-            suppliers.links.map((link) => {
-                pages[link.rel] = link.href;
-            });
+            if (suppliers.links) {
+                suppliers.links.map((link) => {
+                    pages[link.rel] = link.href;
+                });
+            }
 
             if(!pages.hasOwnProperty('prev')) {
                 pages.prev = pages.self;
