@@ -14,10 +14,9 @@ const CreateProducer =
         const [submitted, setSubmitted] = useState(false);
         const [showButton, setShowButton] = useState(true);
         const {register, handleSubmit, formState: {errors}} = useForm({
-            defaultValues: {producerId: "", name: "", phone: "", email: "", address: ""},
+            defaultValues: {name: "", phone: "", email: "", address: ""},
         });
         const createFormOptions = {
-            producerId: {required: "ID is required"},
             name: {required: "Name is required"},
             phone: {required: "Phone is required"},
             email: {required: "Email is required"},
@@ -65,16 +64,11 @@ const CreateProducer =
                         {(!submitted || error != null) &&
                             <form className="form-producer" id="form-producer-edit" onSubmit={handleSubmit(handleCreate)}>
                                 <ul className="form-producer-errors">
-                                    {errors?.producerId && <li>{errors.producerId.message}</li>}
                                     {errors?.name && <li>{errors.name.message}</li>}
                                     {errors?.phone && <li>{errors.phone.message}</li>}
                                     {errors?.email && <li>{errors.email.message}</li>}
                                     {errors?.address && <li>{errors.address.message}</li>}
                                 </ul>
-                                <div className="form-group">
-                                    <label>Producer ID</label>
-                                    <input name="id" {...register('id', createFormOptions.producerId)}/>
-                                </div>
                                 <div className="form-group">
                                     <label>Name</label>
                                     <input type="text" name="name" {...register('name', createFormOptions.name)}/>
